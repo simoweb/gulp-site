@@ -17,6 +17,7 @@ var postcss = require('gulp-postcss');
 var filter = require('gulp-filter');
 var cssbeautify = require('gulp-cssbeautify');
 var mainBowerFiles = require('main-bower-files');
+var prettify = require('gulp-jsbeautifier');
 
 
 /******************************
@@ -145,9 +146,9 @@ var inject = require('gulp-inject');
 gulp.task('index', function () {
   gulp.src('./dist/*.html')
   .pipe(inject(gulp.src(['./dist/**/*.js', './dist/**/*.css'], {read: false}), {relative: true}))
+  .pipe(prettify({indentSize: 2}))
   .pipe(gulp.dest('./dist'));
 });
-
 
 
 
