@@ -1,9 +1,59 @@
 /************************************
 	Global
 ************************************/
+
 .test {
   border-radius: 5px;
   box-shadow: 2px 2px #eee;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+}
+
+/************************************
+	Header
+************************************/
+
+.test {
+  border-radius: 5px;
+  box-shadow: 2px 2px #eee;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.test {
+  border-radius: 5px;
+  box-shadow: 2px 2px #eee;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 300px) {
+
+  .test {
+    color: #fff;
+  }
+
+  .classe {
+    color: #fff;
+  }
+
+  .test {
+    color: #fff;
+  }
+
+  .classe {
+    color: #fff;
+  }
+
+  .test {
+    color: #fff;
+  }
+
+  .classe {
+    color: #fff;
+  }
+}
+

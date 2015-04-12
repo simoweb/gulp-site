@@ -1,9 +1,18 @@
 /************************************
 	Global
 ************************************/
+
 .test {
 	border-radius: 5px;
 	box-shadow: 2px 2px #eee;
 	display: flex;
+	@media (max-width:300px) {
+		color:#fff;
+	}
+}
+.classe {
+	@media (max-width:300px) {
+		color:#fff;
+	}
 }
 
