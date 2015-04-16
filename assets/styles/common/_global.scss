@@ -1,18 +1,17 @@
 /************************************
-	Global
+	Global and typography
 ************************************/
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic,400italic);
 
-.test {
-	border-radius: 5px;
-	box-shadow: 2px 2px #eee;
-	display: flex;
-	@media (max-width:300px) {
-		color:#fff;
-	}
+body {
+  color: $text-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: 1.6;
+  background-color: $bg-gray;
 }
-.classe {
-	@media (max-width:300px) {
-		color:#fff;
-	}
+a:link, a:visited {
+    
 }
 

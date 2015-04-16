@@ -49,12 +49,12 @@ gulp.task('styles', function() {
         }))
     .pipe(gulp.dest('dist/css'));
     //minify
-	gulp.src(srcSass+'main.scss')
+	/*gulp.src(srcSass+'main.scss')
     .pipe(sass())
 	.pipe(postcss([ autoprefixer({ browsers: ['last 2 version'] }) ]))
 	.pipe(minifyCSS({keepBreaks:false}))
 	.pipe(rename('main.min.css'))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'));*/
 });
 
 /******************************
@@ -77,7 +77,7 @@ gulp.task('comprimeImage', function () {
 gulp.task('scripts', function() {
     return gulp.src(srcJs)
         .pipe(gulp.dest('dist/js'))
-        .pipe(rename('main.min.js'))
+        //.pipe(rename('main.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
@@ -105,7 +105,7 @@ gulp.task('watch', function() {
 ******************************/
 gulp.task('libs', function() {
 
-	var jsFilter = filter(['*.js','!doc-ready.js','!EventEmitter.js','!eventie.js','!get-size.js','!get-style-property.js','!item.js','!matches-selector.js','!outlayer.js']);
+	var jsFilter = filter(['*.js']);
     var cssFilter = filter('*.css');
     var fontFilter = filter(['*.eot', '*.woff', '*.svg', '*.ttf']);
 
@@ -145,12 +145,39 @@ var inject = require('gulp-inject');
 
 gulp.task('index', function () {
   gulp.src('./dist/*.html')
-  .pipe(inject(gulp.src(['./dist/**/*.js', './dist/**/*.css'], {read: false}), {relative: true}))
+  .pipe(inject(gulp.src(['./dist/**/jquery.min.js','./dist/**/*.js', './dist/**/*.css','!./dist/**/main.min.css'], {read: false}), {relative: true}))
   .pipe(prettify({indentSize: 2}))
   .pipe(gulp.dest('./dist'));
 });
 
 
+/******************************
+//upload ftp
+******************************/
+var gutil = require( 'gulp-util' );
+var ftp = require( 'vinyl-ftp' );
+gulp.task( 'ftp', function() {
+
+    var conn = ftp.create( {
+        host:     '',
+        user:     '',
+        password: '',
+        parallel: 10,
+        log: gutil.log
+    } );
+
+    var globs = [
+        'dist/**',
+    ];
+
+    // using base = '.' will transfer everything to /public_html correctly
+    // turn off buffering in gulp.src for best performance
+
+    return gulp.src( globs, { base: '.', buffer: false } )
+        .pipe( conn.newer( '../subdomains/gulpbase/httpdocs' ) ) // only upload newer files
+        .pipe( conn.dest( '../subdomains/gulpbase/httpdocs' ) );
+
+} );
 
 // Default Task
 gulp.task('default', ['styles','comprimeImage','scripts','lint','libs','index']);

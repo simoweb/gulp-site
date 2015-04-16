@@ -1,59 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,300italic,400italic);
+
 /************************************
-	Global
+	STYLES
+************************************
+
+- Global and typography
+- Buttons
+- Typography
+- Header
+- Sidebar
+- Footer
+- Pages
+- Typography
+- Header
+- Sidebar
+- Footer
+- Pages
+- Posts
+- Buttons
+- Comments
+- Forms
+- Grid
 ************************************/
 
-.test {
-  border-radius: 5px;
-  box-shadow: 2px 2px #eee;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+/************************************
+	Global and typography
+************************************/
+
+body {
+  color: #666666;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  background-color: #f2f2f2;
 }
 
 /************************************
 	Header
 ************************************/
 
-.test {
-  border-radius: 5px;
-  box-shadow: 2px 2px #eee;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
+/************************************
+	Sidebar
+************************************/
 
-.test {
-  border-radius: 5px;
-  box-shadow: 2px 2px #eee;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
+/************************************
+	Footer
+************************************/
 
-@media (max-width: 300px) {
+/************************************
+	Pages
+************************************/
 
-  .test {
-    color: #fff;
-  }
+/************************************
+	Post
+************************************/
 
-  .classe {
-    color: #fff;
-  }
+/************************************
+	Buttons
+************************************/
 
-  .test {
-    color: #fff;
-  }
+/************************************
+	Comments
+************************************/
 
-  .classe {
-    color: #fff;
-  }
+/************************************
+	Forms
+************************************/
 
-  .test {
-    color: #fff;
-  }
-
-  .classe {
-    color: #fff;
-  }
-}
+/************************************
+	Grid
+************************************/
 

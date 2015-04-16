@@ -17,10 +17,10 @@
   "dependencies": {
     "bootstrap-sass-official": "~3.3.4",
     "fontawesome": "~4.3.0",
-    "masonry": "~3.2.3",
     "modernizr": "~2.8.3",
     "scrollr": "~0.6.29",
     "stellar.js": "~0.6.2",
-    "bootstrap": "~3.3.4"
+    "bootstrap": "~3.3.4",
+    "owl-carousel2": "*"
   }
 }

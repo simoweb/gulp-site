@@ -1,1 +1,19 @@
+///************************************
+//	Variablese Mixin
+//************************************/
 
+$text-color: #666666;
+$heading-color: #333;
+$sub-heading-color:#aaa9a9;
+
+$link-color: #2883b0;
+$link-hover-color: saturate($link-color, 20%);
+$link-visited-color: $link-color;
+
+$base-font-family:'Lato', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 300;
+$base-line-height: 1.6;
+
+//background
+$bg-gray:#f2f2f2 ;
